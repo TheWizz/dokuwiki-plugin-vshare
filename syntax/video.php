@@ -151,12 +151,11 @@ class syntax_plugin_vshare_video extends DokuWiki_Syntax_Plugin
      */
     public function sizeToStyle($width, $height)
     {
-        // no unit? use px
-        if ($width && $width == (int)$width) {
+        // If just get a number, assume px
+        if ($width && is_numeric($width)) {
             $width = $width . 'px';
         }
-        // no unit? use px
-        if ($height && $height == (int)$height) {
+        if ($height && is_numeric($height)) {
             $height = $height . 'px';
         }
 
